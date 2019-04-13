@@ -51,6 +51,14 @@ class UsersController < ApplicationController
     redirect_to user_path(@user_to_add)
   end
 
+  def remove
+    @user_to_remove = User.find(params[:id])
+    if current_user
+      current_user.friends.delete(@user_to_remove)
+    end
+    redirect_to user_path(@user_to_remove)
+  end
+
   private
 
   def user_params

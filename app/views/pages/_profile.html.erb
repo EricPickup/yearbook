@@ -16,7 +16,7 @@
 <% elsif current_user && (current_user.friends.exclude? @user) %>
   <%= button_to "Add as friend", {action: "add"}, {class: "btn btn-success"} %>
 <% else %>
-  You are friends with <%= @user.name.split.first %>
+  <%= button_to "Remove friend", {action: "remove"}, {class: "btn btn-danger"} %>
 <% end %>
 <br><br>
 

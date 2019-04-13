@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :users do
     post :add, on: :member
+    post :remove, on: :member
   end
   resources :posts, only: [:show, :destroy, :create]
 end
