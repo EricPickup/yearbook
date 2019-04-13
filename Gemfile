@@ -56,3 +56,4 @@ gem 'rails-erd', group: :development
 gem 'omniauth-google-oauth2'
 gem 'pry'
 gem 'pry-byebug'
+gem 'faker'
