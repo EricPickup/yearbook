@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root :to => "pages#index"
   get 'profile', to: "pages#profile"
   get 'friends', to: "pages#friends"
+  get 'friends/find', to: "pages#find_friends"
 
   resources :users do
     post :add, on: :member

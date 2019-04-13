@@ -15,6 +15,10 @@ class PagesController < ApplicationController
     @friends = current_user.friends
   end
 
+  def find_friends
+    @random_users = User.select { |user| user != current_user && (user.friends.exclude? current_user) }.sample(10)
+  end
+
   def index
     if current_user
       @post = Post.new

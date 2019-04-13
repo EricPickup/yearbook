@@ -1,0 +1,9 @@
+<h1>Find Friends</h1>
+<% @random_users.each do |user| %>
+  <p><b>Name:</b> <%= link_to user.name, user_path(user) %></p>
+  <p><b>Email:</b> <%= user.email %></p>
+  <p><b>College:</b> <%= user.college %></p>
+  <p><b>Relationship status:</b> <%= user.relationship %></p>
+  <p><b>Location:</b> <%= user.location %></p>
+  <br><br>
+<% end %>

@@ -2,5 +2,4 @@
 - Add Google Maps javascript recommendations for location
 - Change relationship status to radio button "single" or "relationship" instead of textbot
 - Fix date display on posts
-- Add button to edit profile on profile
 - Don't give menu option for google account
