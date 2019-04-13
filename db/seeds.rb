@@ -19,7 +19,7 @@ def rand_time_within_24_hours
   return Time.at(
     rand_in_range(
       (Time.now - ((1..24).to_a.sample).hours - ((1..60).to_a.sample).seconds).to_f,
-      Time.now.to_fr
+      Time.now.to_f
     )
   ).to_datetime
 end
