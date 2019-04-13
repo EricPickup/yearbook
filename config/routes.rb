@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'profile', to: "pages#profile"
   get 'friends', to: "pages#friends"
 
-  resources :users
+  resources :users do
+    post :add, on: :member
+  end
   resources :posts, only: [:show, :destroy, :create]
 end

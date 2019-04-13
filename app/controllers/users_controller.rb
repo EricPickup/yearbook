@@ -42,6 +42,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def add
+    @user_to_add = User.find(params[:id])
+    if current_user
+      current_user.friends << @user_to_add
+    end
+    redirect_to user_path(@user_to_add)
+  end
+
   private
 
   def user_params
