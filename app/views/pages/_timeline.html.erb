@@ -5,10 +5,4 @@
 
 <h3>Recent Posts</h3>
 
-
-<% @latest_posts.each do |post| %>
-  <p><b>Name:</b> <%= link_to post.user.name, user_path(post.user) %></p>
-  <p><b>Date:</b> <%= post.created_at.strftime('%B %d, %Y at %l:%M %p') %></p>
-  <p><b>Content:</b> <%= post.content %></p>
-  <br><br>
-<% end %>
+<%= render 'post_list' %>

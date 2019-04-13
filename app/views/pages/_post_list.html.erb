@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+  <p><b>Name:</b> <%= link_to post.user.name, user_path(post.user) %></p>
+  <p><b>Date:</b> <%= post.created_at.strftime('%B %d, %Y at %l:%M %p') %></p>
+  <p><b>Content:</b> <%= post.content %></p>
+  <% if post.user == current_user %>
+  <p><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+  <br><br>
+<% end %>
