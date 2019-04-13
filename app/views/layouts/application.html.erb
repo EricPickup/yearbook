@@ -9,6 +9,24 @@
   </head>
 
   <body>
+    <% if flash[:alert] %>
+      <p style="color: red"><b>Alert:</b> <%= flash[:alert] %></p>
+    <% end %>
+
+    <% if current_user %>
+      <p>Signed in as: <%= current_user.email %></p>
+      <%= link_to "Log out", :logout %>
+    <% else %>
+      <%= link_to "Log in", :google_auth %>
+    <% end %>
+
+    <header>
+      <ul>
+        <li><%= link_to "Home", root_url %></li>
+        <% if current_user %><li><%= link_to "Profile", profile_path %></li><% end %>
+      </ul>
+    </header>
+
     <%= yield %>
   </body>
 </html>

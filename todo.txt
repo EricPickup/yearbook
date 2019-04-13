@@ -1,0 +1,3 @@
+- Change google oauth because it shows events project name
+- Add Google Maps javascript recommendations for location
+- Change relationship status to radio button "single" or "relationship" instead of textbot
