@@ -1,1 +1,14 @@
 <h1>Timeline</h1>
+
+<h3>Post status</h3>
+<%= render 'post_form' %>
+
+<h3>Recent Posts</h3>
+
+
+<% @latest_posts.each do |post| %>
+  <p><b>Name:</b> <%= post.user.name %></p>
+  <p><b>Date:</b> <%= post.created_at.strftime('%B %d, %Y at %l:%M %p') %></p>
+  <p><b>Content:</b> <%= post.content %></p>
+  <br><br>
+<% end %>

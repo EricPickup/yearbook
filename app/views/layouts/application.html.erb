@@ -23,7 +23,10 @@
     <header>
       <ul>
         <li><%= link_to "Home", root_url %></li>
-        <% if current_user %><li><%= link_to "Profile", profile_path %></li><% end %>
+        <% if current_user %>
+          <li><%= link_to "Profile", profile_path %></li>
+          <li><%= link_to "Friends", friends_path %></li>
+        <% end %>
       </ul>
     </header>
 

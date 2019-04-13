@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'friends', to: "pages#friends"
 
   resources :users
+  resources :posts, only: [:show, :destroy, :create]
 end
