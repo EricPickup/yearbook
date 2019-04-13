@@ -7,7 +7,7 @@
       </h6>
       <p class="card-text"><%= post.content %></p>
       <% if post.user == current_user %>
-        <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-success" %>
+        <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
       <% end %>
     </div>
   </div>

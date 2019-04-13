@@ -23,3 +23,14 @@
     margin: 0 auto;
     /* margin-left: auto; margin-right: auto; */
 }
+
+@media only screen and (max-width: 786px) {
+  .col-6 {
+    max-width: 100%;
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  .col-3 {
+    display: none;
+  }
+}
