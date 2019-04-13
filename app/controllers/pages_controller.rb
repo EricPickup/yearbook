@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   def index
     if current_user
       @post = Post.new
-      @posts = Post.select { |post| post.user == current_user || (post.user.friends.include? current_user) }.last(10).reverse
+      @posts = Post.select { |post| post.user == current_user || (current_user.friends.include? post.user) }.sort_by(&:created_at).reverse.first(30)
     end
   end
 end
