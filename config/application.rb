@@ -15,7 +15,7 @@ module Yearbook
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.middleware.use OmniAuth::Builder do
-      provider :google_oauth2, '46281716787-5jfh8nvo413qkge6gm2p5rd03rsrpc6e.apps.googleusercontent.com', 'ec9ZO-yN2hhEVd6kNeSNuCdK', { hd: 'uwindsor.ca', prompt: 'select_account' }
+      provider :google_oauth2, '46281716787-5jfh8nvo413qkge6gm2p5rd03rsrpc6e.apps.googleusercontent.com', 'ec9ZO-yN2hhEVd6kNeSNuCdK', { hd: 'uwindsor.ca', prompt: 'none' }
     end
   end
 end

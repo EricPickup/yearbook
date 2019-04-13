@@ -1,0 +1,33 @@
+<h1><%= @user.name %></h1>
+<div class="card w-100">
+  <div class="card-body">
+    <h5 class="card-title"><%= @user.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= @user.college %></h6>
+    <div class="card-text">
+      <p><b>Relationship status:</b> <%= @user.relationship %></p>
+      <p><b>Location:</b> <%= @user.location %></p>
+    </div>
+  </div>
+</div>
+<br>
+<% if @user == current_user %>
+  <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-success" %>
+<% elsif current_user && (current_user.friends.exclude? @user) %>
+  <%= button_to "Add as friend", {action: "add"}, {class: "btn btn-success"} %>
+<% else %>
+  You are friends with <%= @user.name.split.first %>
+<% end %>
+<br><br>
+
+<% if @user == current_user %>
+  <h3>Post status</h3>
+  <%= render 'pages/post_form' %>
+  <br>
+<% end %>
+
+<h3>Recent Posts</h3>
+<% if @user == current_user || (current_user.friends.include? @user) %>
+  <%= render 'pages/post_list' %>
+<% else %>
+  You cannot see this user's posts if you are not friends with them.
+<% end %>

@@ -1,11 +1,1 @@
-<p><b>Name:</b> <%= @user.name %></p>
-<p><b>Email:</b> <%= @user.email %></p>
-<p><b>College:</b> <%= @user.college %></p>
-<p><b>Relationship status:</b> <%= @user.relationship %></p>
-<p><b>Location:</b> <%= @user.location %></p>
-
-<% if current_user && current_user != @user && (current_user.friends.exclude? @user) %>
-  <%= button_to "Add as friend", action: "add" %>
-<% else %>
-  You are friends with this user
-<% end %>
+<%= render 'pages/profile' %>

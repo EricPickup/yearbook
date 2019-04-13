@@ -6,7 +6,8 @@ class PagesController < ApplicationController
     if current_user.nil?
       redirect_to root_url, alert: "You need to be signed in to view your profile!"
     else
-      @posts = current_user.posts.last(10).reverse
+      @user = current_user
+      @posts = @user.posts.last(10).reverse
       @post = Post.new
     end
   end

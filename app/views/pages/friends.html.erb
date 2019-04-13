@@ -1,9 +1,14 @@
-<h1>Friends (<%= @friends.size %>)</h1>
+<h1>My friends (<%= @friends.size %>)</h1>
 <% @friends.each do |friend| %>
-  <p><b>Name:</b> <%= link_to friend.name, user_path(friend) %></p>
-  <p><b>Email:</b> <%= friend.email %></p>
-  <p><b>College:</b> <%= friend.college %></p>
-  <p><b>Relationship status:</b> <%= friend.relationship %></p>
-  <p><b>Location:</b> <%= friend.location %></p>
+  <div class="card w-100">
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to friend.name, user_path(friend) %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= friend.college %></h6>
+      <div class="card-text">
+        <p><b>Relationship status:</b> <%= friend.relationship %></p>
+        <p><b>Location:</b> <%= friend.location %></p>
+      </div>
+    </div>
+  </div>
   <br><br>
 <% end %>

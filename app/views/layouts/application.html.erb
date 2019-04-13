@@ -9,28 +9,69 @@
   </head>
 
   <body>
-    <% if flash[:alert] %>
-      <p style="color: red"><b>Alert:</b> <%= flash[:alert] %></p>
-    <% end %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-yearbook">
+      <%= link_to "yearbook", root_url, class: "navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <% if current_user %>
-      <p>Signed in as: <%= current_user.email %></p>
-      <%= link_to "Log out", :logout %>
-    <% else %>
-      <%= link_to "Log in", :google_auth %>
-    <% end %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Home", root_url, class: 'nav-link' %>
+          </li>
+          <% if current_user %>
+            <li class="nav-item active">
+              <%= link_to "Profile", profile_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "Friends", friends_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "Find Friends", friends_find_path, class: 'nav-link' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="pull-right">
+        <ul class="nav navbar-nav">
+          <% if current_user %>
+            <li class="nav-item active" style="margin-right:20px">
+                <%= link_to "Welcome, #{current_user.name.split.first}!", profile_path, class: "nav-link" %>
+            </li>
+            <%= link_to "Log out", :logout, class: "btn navbar-btn btn-success" %>
+          <% else %>
+            <%= link_to "Log in", :google_auth, class: "btn navbar-btn btn-success" %>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
 
-    <header>
-      <ul>
-        <li><%= link_to "Home", root_url %></li>
-        <% if current_user %>
-          <li><%= link_to "Profile", profile_path %></li>
-          <li><%= link_to "Friends", friends_path %></li>
-          <li><%= link_to "Find Friends", friends_find_path %></li>
-        <% end %>
-      </ul>
-    </header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <br>
+          <% if flash[:error] %>
+            <div class="alert alert-danger" role="alert" align="center">
+               <%= flash[:error] %>
+            </div>
+          <% end %>
+          <% if flash[:success] %>
+            <div class="alert alert-success" role="alert" align="center">
+               <%= flash[:success] %>
+            </div>
+          <% end %>
+          <% if flash[:info] %>
+            <div class="alert alert-info" role="alert" align="center">
+               <%= flash[:info] %>
+            </div>
+          <% end %>
 
-    <%= yield %>
+          <%= yield %>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
   </body>
 </html>

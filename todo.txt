@@ -3,3 +3,4 @@
 - Change relationship status to radio button "single" or "relationship" instead of textbot
 - Fix date display on posts
 - Don't give menu option for google account
+- Cite images

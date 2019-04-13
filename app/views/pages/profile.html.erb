@@ -1,12 +1,1 @@
-<p><b>Name:</b> <%= current_user.name %></p>
-<p><b>Email:</b> <%= current_user.email %></p>
-<p><b>College:</b> <%= current_user.college %></p>
-<p><b>Relationship status:</b> <%= current_user.relationship %></p>
-<p><b>Location:</b> <%= current_user.location %></p>
-<%= link_to "Edit profile", edit_user_path(current_user) %>
-<br><br>
-<h3>Post status</h3>
-<%= render 'post_form' %>
-<br>
-<h3>Recent Posts</h3>
-<%= render 'post_list' %>
+<%= render 'profile' %>

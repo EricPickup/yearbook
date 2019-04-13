@@ -1,6 +1,9 @@
-<%= form_with model: @post do |form| %>
-  <%= form.label "Status" %><br>
-  <%= form.text_area :content %>
-  <%= form.hidden_field :user_id, :value => current_user.id %>
-  <p><%= form.submit 'Submit' %></p>
-<% end %>
+<div class="form-group">
+  <%= form_with model: @post do |form| %>
+    <%= form.label "Post status" %><br>
+    <%= form.text_area :content, class: "form-control" %>
+    <%= form.hidden_field :user_id, :value => current_user.id %>
+    <br>
+    <p><%= form.submit 'Post', class: "btn btn-success" %></p>
+  <% end %>
+</div>
