@@ -57,5 +57,5 @@ gem 'omniauth-google-oauth2'
 gem 'pry'
 gem 'pry-byebug'
 gem 'faker'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem "bootstrap", ">= 4.3.1"
 gem 'jquery-rails'
